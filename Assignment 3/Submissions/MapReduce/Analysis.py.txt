@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+#Action and Thriller over the years
+x = (2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015)
+y = (9674,9674,9674,9674,9674,17498,17498,17498,17498,17498,22797,22797,22797,22797,22797)
+plt.xlim(xmin=2000, xmax = 2020)
+
+plt.bar(x,y,align='center') # A bar chart
+plt.xlabel('Years')
+plt.ylabel('Number of Movies')
+plt.title('Comedy and Romance')
+plt.show()
+
+y1 = (904,904,904,904,904,1279,1279,1279,1279,1279,2562,2562,2562,2562,2562)
+plt.xlim(xmin=2000, xmax = 2020)
+
+plt.bar(x,y1,align='center') # A bar chart
+plt.xlabel('Years')
+plt.ylabel('Number of Movies')
+plt.title('Action and Thrillers')
+plt.show()
+
+y2 = (513,513,513,513,513,674,674,674,674,674,1027,1027,1027,1027,1027)
+plt.xlim(xmin=2000, xmax = 2020)
+
+plt.bar(x,y2,align='center') # A bar chart
+plt.xlabel('Years')
+plt.ylabel('Number of Movies')
+plt.title('Adventure and Sci-Fi')
+plt.show()
+
+plt.plot(x, y, label = "Comedy and Romance")
+plt.plot(x, y1, label = "Action and Thrillers")
+plt.plot(x, y2, label = "Adventure and Sci-Fi")
+plt.xlabel("Years")
+plt.ylabel("Number of movies")
+plt.title("Movie Compare")
+plt.legend()
+plt.show()

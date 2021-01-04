@@ -1,0 +1,51 @@
+SQL> SELECT * FROM
+  2  (SELECT B.ORIGINALTITLE, B.GENRES, R.AVERAGERATING
+  3  FROM TITLE_BASICS B, TITLE_RATINGS R
+  4  WHERE B.ENDYEAR BETWEEN '2001'AND '2005'
+  5  AND B.GENRES LIKE '%Adventure%Sci-Fi%'
+  6  AND B.TCONST=R.TCONST
+  7  ORDER BY R.AVERAGERATING)
+  8  WHERE ROWNUM <=5;
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+Power Rangers S.P.D.                                                            
+Action,Adventure,Sci-Fi                                                         
+          6.4                                                                   
+                                                                                
+Power Rangers DinoThunder                                                       
+Action,Adventure,Sci-Fi                                                         
+          6.6                                                                   
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+                                                                                
+2030 CE                                                                         
+Adventure,Sci-Fi                                                                
+          7.1                                                                   
+                                                                                
+First Wave                                                                      
+Adventure,Drama,Sci-Fi                                                          
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+          7.2                                                                   
+                                                                                
+Immortal Grand Prix                                                             
+Adventure,Animation,Sci-Fi                                                      
+          7.2                                                                   
+                                                                                
+
+SQL> SPOOL OFF;

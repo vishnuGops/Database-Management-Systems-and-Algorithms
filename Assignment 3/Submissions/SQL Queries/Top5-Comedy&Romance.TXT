@@ -1,0 +1,51 @@
+SQL> SELECT * FROM
+  2  (SELECT B.ORIGINALTITLE, B.GENRES, R.AVERAGERATING
+  3  FROM TITLE_BASICS B, TITLE_RATINGS R
+  4  WHERE B.ENDYEAR BETWEEN '2001'AND '2005'
+  5  AND B.GENRES LIKE '%Comedy%Romance%'
+  6  AND B.TCONST=R.TCONST
+  7  ORDER BY R.AVERAGERATING DESC)
+  8  WHERE ROWNUM <=5;
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+Friends                                                                         
+Comedy,Romance                                                                  
+          8.9                                                                   
+                                                                                
+Coupling                                                                        
+Comedy,Romance                                                                  
+          8.6                                                                   
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+                                                                                
+Eisai to tairi mou                                                              
+Comedy,Romance                                                                  
+          8.4                                                                   
+                                                                                
+As Time Goes By                                                                 
+Comedy,Romance                                                                  
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+          8.3                                                                   
+                                                                                
+Amor Descarado                                                                  
+Comedy,Drama,Romance                                                            
+          8.3                                                                   
+                                                                                
+
+SQL> SPOOL OFF

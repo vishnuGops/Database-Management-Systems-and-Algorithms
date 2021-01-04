@@ -1,0 +1,51 @@
+SQL> SELECT * FROM
+  2  (SELECT B.ORIGINALTITLE, B.GENRES, R.AVERAGERATING
+  3  FROM TITLE_BASICS B, TITLE_RATINGS R
+  4  WHERE B.ENDYEAR BETWEEN '2001'AND '2005'
+  5  AND B.GENRES LIKE '%Comedy%Romance%'
+  6  AND B.TCONST=R.TCONST
+  7  ORDER BY R.AVERAGERATING)
+  8  WHERE ROWNUM <=5;
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+Al salir de clase                                                               
+Comedy,Drama,Romance                                                            
+          3.5                                                                   
+                                                                                
+Psie serce                                                                      
+Comedy,Drama,Romance                                                            
+          3.5                                                                   
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+                                                                                
+An thymitheis t' oneiro mou                                                     
+Comedy,Romance                                                                  
+            4                                                                   
+                                                                                
+Paco y Veva                                                                     
+Comedy,Musical,Romance                                                          
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+            4                                                                   
+                                                                                
+Para??so                                                                        
+Comedy,Romance                                                                  
+          4.7                                                                   
+                                                                                
+
+SQL> SPOOL OFF;

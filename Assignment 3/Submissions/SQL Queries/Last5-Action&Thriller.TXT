@@ -1,0 +1,51 @@
+SQL> SELECT * FROM
+  2  (SELECT B.ORIGINALTITLE, B.GENRES, R.AVERAGERATING
+  3  FROM TITLE_BASICS B, TITLE_RATINGS R
+  4  WHERE B.ENDYEAR BETWEEN '2001'AND '2005'
+  5  AND B.GENRES LIKE '%Action%Thriller%'
+  6  AND B.TCONST=R.TCONST
+  7  ORDER BY R.AVERAGERATING)
+  8  WHERE ROWNUM <=5;
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+The Immortal                                                                    
+Action,Horror,Thriller                                                          
+          5.1                                                                   
+                                                                                
+Spetsnaz II                                                                     
+Action,Adventure,Thriller                                                       
+          6.2                                                                   
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+                                                                                
+Hamilton                                                                        
+Action,Thriller                                                                 
+          6.4                                                                   
+                                                                                
+Tom Stone                                                                       
+Action,Drama,Thriller                                                           
+
+ORIGINALTITLE                                                                   
+--------------------------------------------------------------------------------
+GENRES                                                                          
+--------------------------------------------------------------------------------
+AVERAGERATING                                                                   
+-------------                                                                   
+          7.3                                                                   
+                                                                                
+Fastlane                                                                        
+Action,Crime,Thriller                                                           
+          7.5                                                                   
+                                                                                
+
+SQL> SPOOL OFF;
